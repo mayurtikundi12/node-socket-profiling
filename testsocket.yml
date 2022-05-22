@@ -1,0 +1,20 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 10
+      arrivalRate: 100
+
+scenarios:
+  - engine: "socketio"
+    flow:
+      - emit:
+          channel: "green"
+          data: "this is a game changer"
+      # - emit:
+      #     channel: "echo"
+      #     data: "{{ title }}"
+      #     # validate the received response
+      #     response:
+      #       channel: "echoResponse"
+      #       data: "{{ title }}"
+      - think: 1
